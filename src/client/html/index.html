@@ -1,9 +1,53 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Travel App</title>
     </head>
     <body>
-        
+        <header class="hd">
+            <nav class="nav-hd">
+                <a href="#form-begin" class="link-nav" id="form-begin-nav">Search Destination</a>
+                <a href="#info-begin" class="link-nav" id="info-begin-nav">View Trip Details</a>
+            </nav>
+            <h1 id="h1-hd">
+                Travel App
+            </h1>
+            <h2 id="h2-hd">
+                Explore Destinations!!
+            </h2>
+        </header>
+        <main class="main-content">
+            <section class="form-main" id="form-begin">
+                <form>
+                    <div class="loc-form">
+                        <label for="location">Destination:</label>
+                        <input type="text" id="location" name="location" placeholder="Enter destination you would like to explore" required>
+                    </div>
+                    <div class="start-date-form">
+                        <label for="start-date">Journey Start:</label>
+                        <!-- DatePicker will be attached when document loads -->
+                        <input type="text" id="start-date" name="start-date" required>
+                    </div>
+                    <div class="submit-form">
+                        <input type="submit" id="submit-btn" value="GO">
+                    </div>
+                </form>
+            </section>
+            <section class="info-main" id="info-begin">
+                <figure class="fig-info">
+                    <img class="img-fig" id="destination-img" src="" alt="">
+                    <figcaption class="caption-fig" id="destination-figcaption"></figcaption>
+                </figure>
+                <section class="content-info" id="destination-content">
+
+                </section>
+            </section>
+        </main>
+        <footer class="ft">
+            <p id="txt-ft">
+                Thank you for visiting this page. See you again soon.
+            </p>
+        </footer>
     </body>
 </html>
