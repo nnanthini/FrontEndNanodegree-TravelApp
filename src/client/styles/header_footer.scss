@@ -1,0 +1,65 @@
+$black: rgb(30, 30, 36);
+$green-dark: rgb(33, 161, 121);
+$green-light: rgb(129, 174, 157);
+$beige-dark: rgb(196, 175, 154);
+$peach-dark: rgb(251, 159, 137);
+$white: rgba(235, 235, 235, 0.685);
+$font: "Comic Sans MS", cursive, sans-serif;
+
+header, footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: linear-gradient(to right, rgb(129,174,157), rgb(33,161,121));
+    background-color: $green-dark;
+    opacity: 0.7;
+    color: $beige-dark;
+}
+
+nav, h1, h2, p {
+    padding: 10px 10px;
+}
+
+nav {
+    align-self: stretch;
+    background-color: rgba(30, 30, 36, 0.692);
+    display: inline-block;
+    //flex-direction: row;
+    //flex-wrap: wrap;
+    //justify-content: space-around;
+    .link-nav {
+        text-align: center;
+        text-decoration: none;
+        color: $black;
+        padding: 5px;
+        font-size: 0.8em;
+        border: 1px solid $black;
+        &:link, &:visited {
+            background-color: rgba(129, 174, 157, 0.897);
+            
+        }
+        &:hover, &:active {
+            background-color: rgba(129, 174, 157, 0.658);
+        }
+    }
+}
+
+h1, h2 {
+    text-shadow: 3px 3px 6px $black;    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#h1-hd {
+    font-size: 2em;
+}
+
+#h2-hd {
+    font-size: 1.5em;
+}
+
+#txt-ft {
+    font-size: 1em;
+    text-shadow: 3px 3px 6px $black;
+    font-weight: bold;
+}

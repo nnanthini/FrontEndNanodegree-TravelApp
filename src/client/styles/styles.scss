@@ -1,0 +1,21 @@
+$black: rgb(30, 30, 36);
+$green-dark: rgb(33, 161, 121);
+$green-light: rgb(129, 174, 157);
+$beige-dark: rgb(196, 175, 154);
+$peach-dark: rgb(251, 159, 137);
+$white: rgba(235, 235, 235, 0.685);
+$font: "Comic Sans MS", cursive, sans-serif;
+
+body {
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    font-family: $font;
+
+    header, main, footer {
+        padding: 20px 10px;
+    }
+}
+
