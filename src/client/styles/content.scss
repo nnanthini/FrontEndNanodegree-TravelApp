@@ -1,0 +1,97 @@
+$black: rgb(30, 30, 36);
+$green-dark: rgb(33, 161, 121);
+$green-light: rgb(129, 174, 157);
+$beige-dark: rgb(196, 175, 154);
+$peach-dark: rgb(251, 159, 137);
+$white: rgba(235, 235, 235, 0.685);
+$font: "Comic Sans MS", cursive, sans-serif;
+
+main {
+    background-image: linear-gradient(to right, rgb(251, 159, 137), rgba(251, 160, 137, 0.801));
+    background-color: $peach-dark;
+    opacity: 0.7;
+
+    section {
+        padding: 5px;
+        background-color: $black;
+        opacity: 0.4;
+        border: 2px solid black;
+
+        form, section, figure {
+            padding: 10px;
+        }
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+
+        label, input {
+            padding: 10px;
+            color: rgb(196, 175, 154);
+        }
+    }
+}
+
+#location, #start-date {
+    width: 30%;
+    border: 2px solid rgba(0, 0, 0, 0.726);
+    &:focus {
+        border: 3px solid rgb(0, 0, 0);
+
+    }
+
+}
+
+
+.info-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    figure, section {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px;
+        box-shadow: 0 1px 2px 0 rgba(235, 235, 235, 0.685), 0 4px 10px 0 rgba(235, 235, 235, 0.87);
+    
+    }
+}
+
+img, figcaption {
+            
+}
+
+#submit-btn {
+    background-color: rgb(196, 175, 154);
+     
+    box-shadow: 0 1px 2px 0 rgba(235, 235, 235, 0.685), 0 4px 10px 0 rgba(235, 235, 235, 0.87);
+    text-align: center;
+    text-decoration: none;
+    color: $black;
+    padding: 5px;
+    font-size: 1em;
+    color: $black;
+    border: 1px solid $black;
+    width: 20%;
+    height: 20%;
+    
+    &:hover {
+        background-color: rgba(199, 160, 121, 0.938);
+    }
+}
