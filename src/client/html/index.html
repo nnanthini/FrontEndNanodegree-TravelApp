@@ -19,7 +19,7 @@
         </header>
         <main class="main-content">
             <section class="form-main" id="form-begin">
-                <form id="form">
+                <form id="form" autocomplete="off">
                     <div class="loc-form">
                         <label for="location">Destination:</label>
                         <input type="text" id="location" name="location" placeholder="Enter destination you would like to explore" required>
@@ -27,7 +27,7 @@
                     <div class="start-date-form">
                         <label for="start-date">Journey Start:</label>
                         <!-- DatePicker will be attached when document loads -->
-                        <input type="text" id="start-date" name="start-date" required>
+                        <input type="date" id="start-date" name="start-date" required>
                     </div>
                     <div class="submit-form">
                         <input type="submit" id="submit-btn" value="GO">
