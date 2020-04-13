@@ -12,6 +12,19 @@ function dateValidator(date) {
     console.log(`Todays Date is ${dateToday}`);
 
     if (dateUser.getTime() >= dateToday.getTime()) {
+        let Difference_In_Time = dateUser.getTime() - dateToday.getTime(); 
+  
+        // To calculate the no. of days between two dates 
+        let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
+        
+        //To display the final no. of days (result) 
+        console.log("Total number of days between dates  <br>"
+                    + dateUser + "<br> and <br>" 
+                    + dateToday + " is: <br> " 
+                    + Math.ceil(Difference_In_Days)); 
+
+        //document.getElementById('')
+        Client.contentAppend('daysLeft', Math.ceil(Difference_In_Days))
         return true;
     } else {
         return false;
