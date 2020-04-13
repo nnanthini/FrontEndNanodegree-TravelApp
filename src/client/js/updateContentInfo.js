@@ -1,5 +1,9 @@
+let contentInfo = {
+  daysLeft: 0,
+  locationInfo: {},
+  imgInfo: {}
+};
 function contentAppend(key, value) {
-    const contentInfo = {}
     contentInfo[key] = value;
 
     console.log(`Content to be updated in UI is `)
