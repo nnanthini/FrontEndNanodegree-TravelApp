@@ -11,7 +11,7 @@ function dateValidator(date) {
     console.log(`User Input Date is ${dateUser}`);
     console.log(`Todays Date is ${dateToday}`);
 
-    if (dateUser.getTime() >= dateToday.getTime()) {
+    if ((dateUser.getTime() >= dateToday.getTime()) && (date.length < 11)) {
         let Difference_In_Time = dateUser.getTime() - dateToday.getTime(); 
   
         // To calculate the no. of days between two dates 
