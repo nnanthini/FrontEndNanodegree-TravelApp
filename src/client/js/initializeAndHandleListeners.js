@@ -7,6 +7,9 @@ function eventListeners() {
 
     function handleFormSubmit(event) {
         event.preventDefault();
+        Client.contentAppend('locationInfo', {});
+        Client.contentAppend('imgInfo', {});
+        Client.contentAppend('daysLeft', 0);
         console.log(`Inside form event handler function..
         User input destination and date are as follows...`);
         let destination = document.getElementById('location').value;
@@ -27,6 +30,8 @@ function eventListeners() {
             alert("Enter a valid date")
             postCallCheck = false;
         }
+        let locInfo = {}
+        let imgInfo = {}
 
         // Fetch is called only if both destination and date entered by user is valid
         if(postCallCheck) {
@@ -45,7 +50,7 @@ function eventListeners() {
             .then(function(res) {
                 console.log(`Result from server for POST call 'http://localhost:8000/destinationDetails'`)
                 console.log(res);
-                const locInfo = {
+                locInfo = {
                     latitude: res.latitude,
                     longitude: res.longitude,
                     administration: res.administration,
@@ -61,8 +66,7 @@ function eventListeners() {
                 
             })
 
-
-            // Getting image details
+            //Getting image details
             fetch('http://localhost:8000/imageDetails', {
             method: 'POST',
             mode: 'cors',
@@ -70,13 +74,13 @@ function eventListeners() {
             headers: {
             'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ location: destination })
+            body: JSON.stringify({ locationImg : destination, countryImg: locInfo.country })
             })
             .then(res => res.json())
             .then(function(res) {
                 console.log(`Result from server for POST call 'http://localhost:8000/imageDetails'`)
                 console.log(res);
-                const imgInfo = {
+                imgInfo = {
                     imgURL: res.imgURL,
                     imgWidth: res.imgWidth,
                     imgHeight: res.imgHeight
