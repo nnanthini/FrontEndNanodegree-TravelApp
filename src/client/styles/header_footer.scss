@@ -25,9 +25,7 @@ nav {
     align-self: stretch;
     background-color: rgba(30, 30, 36, 0.692);
     display: inline-block;
-    //flex-direction: row;
-    //flex-wrap: wrap;
-    //justify-content: space-around;
+
     .link-nav {
         text-align: center;
         text-decoration: none;
@@ -35,6 +33,7 @@ nav {
         padding: 5px;
         font-size: 0.8em;
         border: 1px solid $black;
+        
         &:link, &:visited {
             background-color: rgba(129, 174, 157, 0.897);
             
@@ -62,4 +61,8 @@ h1, h2 {
     font-size: 1em;
     text-shadow: 3px 3px 6px $black;
     font-weight: bold;
+    text-align: center;
 }
+
+
+

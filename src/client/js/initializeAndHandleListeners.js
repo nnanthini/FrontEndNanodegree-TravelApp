@@ -1,37 +1,40 @@
 function eventListeners() {
-
-    console.log(`Adding submit event listener to form`);
+    
     let formElement = document.getElementById('form');
     formElement.addEventListener('submit', handleFormSubmit);
     console.log(`Added submit event listener to form element`);
-
+    
     function handleFormSubmit(event) {
         event.preventDefault();
-        Client.contentAppend('locationInfo', {});
-        Client.contentAppend('imgInfo', {});
-        Client.contentAppend('daysLeft', 0);
-        console.log(`Inside form event handler function..
-        User input destination and date are as follows...`);
+
+        Client.contentClear();
+        
+        console.log(`Inside form event handler function..`);
         let destination = document.getElementById('location').value;
-        console.log(destination);
+        console.log(`Destination: ${destination}`);
         let date = document.getElementById('start-date').value;
-        console.log(date);
+        console.log(`Date: ${date}`);
 
         let postCallCheck = true;
 
         // If input destination is not a valid string, then alerts user.
         if (!Client.destinationValidator(destination)) {
             alert("Enter a valid destination")
+            // Prevents call to server if destination is not valid.
             postCallCheck = false;
         }
 
         // If input date is not a future date, then alerts user.
         if (!Client.dateValidator(date)) {
             alert("Enter a valid date")
+            // Prevents call to server if date is not valid.
             postCallCheck = false;
         }
+
         let locInfo = {}
         let imgInfo = {}
+        let weatherInfoCurrent = {}
+        let weatherInfoFuture = {}
 
         // Fetch is called only if both destination and date entered by user is valid
         if(postCallCheck) {
@@ -51,6 +54,7 @@ function eventListeners() {
                 console.log(`Result from server for POST call 'http://localhost:8000/destinationDetails'`)
                 console.log(res);
                 locInfo = {
+                    place : destination,
                     latitude: res.latitude,
                     longitude: res.longitude,
                     administration: res.administration,
@@ -87,11 +91,48 @@ function eventListeners() {
                 }
                 Client.contentAppend('imgInfo', imgInfo)
             })
+
+
+            //Get weather details
+            fetch('http://localhost:8000/weatherDetails', {
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'same-origin',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ locationWeather : destination, latitudeWeather: locInfo.latitutde, longitudeWeather: locInfo.longitude })
+            })
+            .then(res => res.json())
+            .then(function(res) {
+                console.log(`Result from server for POST call 'http://localhost:8000/weatherDetails'`)
+                console.log(res);                
+
+                if(res.count === 0) {
+                    weatherInfoCurrent = {
+                        timeZone: res.timeZone,
+                        windSpeed: res.windSpeed,
+                        sunRise: res.sunRise,
+                        sunSet: res.sunSet,
+                        weather: res.weather,
+                        temperature: res.temperature,
+                        feelsLikeTemperature: res.feelsLikeTemperature
+                    }
+                    Client.contentAppend('weatherInfoCurrent', weatherInfoCurrent)
+
+                }else {
+                    weatherInfoFuture = {
+                        weatherForecastFuture: res.weatherForecastFuture
+                    }
+                    Client.contentAppend('weatherInfoFuture', weatherInfoFuture)
+                }               
+                
+            })
+
         }
         
-        
     }
-
+    
 }
 
 export { eventListeners }

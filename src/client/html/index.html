@@ -8,7 +8,7 @@
         <header class="hd">
             <nav class="nav-hd">
                 <a href="#form-begin" class="link-nav" id="form-begin-nav">Search Destination</a>
-                <a href="#info-begin" class="link-nav" id="info-begin-nav">View Trip Details</a>
+                <a href="#saved-begin" class="link-nav" id="info-begin-nav">View Saved Trips</a>
             </nav>
             <h1 id="h1-hd">
                 Travel App
@@ -22,12 +22,12 @@
                 <form id="form" autocomplete="off">
                     <div class="loc-form">
                         <label for="location">Destination:</label>
-                        <input type="text" id="location" name="location" placeholder="Enter destination you would like to explore" required>
+                        <input type="text" title="Destination should contain alphabets and single space only. No leading and trailing spaces." id="location" name="location" placeholder="Enter destination you would like to explore" required>
                     </div>
                     <div class="start-date-form">
                         <label for="start-date">Journey Start:</label>
                         <!-- DatePicker will be attached when document loads -->
-                        <input type="date" id="start-date" name="start-date" required>
+                        <input type="date" title="Weather forecast will be displayed for dates within 16 days from today (including today)." id="start-date" name="start-date" required>
                     </div>
                     <div class="submit-form">
                         <input type="submit" id="submit-btn" value="GO">
@@ -44,9 +44,14 @@
                 </section>
             </section>
         </main>
+        <main class="saved-content" id="saved-trips"> 
+            <section class="card-saved" id="saved-begin">
+            </section>
+        </main>
         <footer class="ft">
             <p id="txt-ft">
                 Thank you for visiting this page. See you again soon.
+                This page uses content from <a href="http://www.geonames.org/">Geonames</a>, <a href="https://www.weatherbit.io/">Weatherbit</a> and <a href="https://pixabay.com/">Pixabay</a>.
             </p>
         </footer>
     </body>
