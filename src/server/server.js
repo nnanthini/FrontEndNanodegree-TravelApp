@@ -176,3 +176,5 @@ app.post('/weatherDetails', cors(), function (request, response) {
       };      
       getData(url);
 })
+
+module.exports = app
