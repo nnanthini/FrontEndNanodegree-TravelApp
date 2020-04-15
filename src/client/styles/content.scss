@@ -13,11 +13,11 @@ main {
 
     section {
         padding: 5px;
-        background-color: $black;
+        background-color: salmon;
         opacity: 0.4;
         border: 2px solid black;
 
-        form, section, figure {
+        form, section, figure, img, div {
             padding: 10px;
         }
     }
@@ -38,7 +38,7 @@ form {
 
         label, input {
             padding: 10px;
-            color: rgb(196, 175, 154);
+            color: rgb(65, 46, 27);
         }
     }
 }
@@ -48,38 +48,34 @@ form {
     border: 2px solid rgba(0, 0, 0, 0.726);
     &:focus {
         border: 3px solid rgb(0, 0, 0);
-
     }
-
 }
 
-
-.info-main {
+.info-main, .card-saved {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: center;    
 
-    figure, section {
+    figure, section, div, img, button {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
         padding: 10px;
-        box-shadow: 0 1px 2px 0 rgba(235, 235, 235, 0.685), 0 4px 10px 0 rgba(235, 235, 235, 0.87);
-    
+        box-shadow: 0 1px 2px 0 rgba(235, 235, 235, 0.685), 0 4px 10px 0 rgba(235, 235, 235, 0.87);    
     }
 }
 
-img, figcaption {
-            
+// Only if data is available to be displayed, display will be set through DOM manipulation.
+#info-begin, #saved-begin {
+    display: none;
 }
 
-#submit-btn {
-    background-color: rgb(196, 175, 154);
-     
+#submit-btn, #btn-add-trip, #btn-remove-trip {
+    background-color: rgb(196, 175, 154);     
     box-shadow: 0 1px 2px 0 rgba(235, 235, 235, 0.685), 0 4px 10px 0 rgba(235, 235, 235, 0.87);
     text-align: center;
     text-decoration: none;

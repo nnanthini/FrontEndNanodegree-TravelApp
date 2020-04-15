@@ -7,7 +7,10 @@ const TerserPlugin = require("terser-webpack-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 
 module.exports = {
-    entry: './src/client/index.js',
+    entry: {
+        polyfill: 'babel-polyfill',
+        app: './src/client/index.js'
+    },
     mode: 'production',
     output: {
         libraryTarget: 'var',
