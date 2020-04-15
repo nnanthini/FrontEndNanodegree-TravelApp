@@ -7,6 +7,7 @@ User might input the destination and the start of travel date.
 The app will show details(image, weather of the location entered).
 The user can save trips.
 The user can also delete trips (Optional functionality requirement for the project).
+App runs on "https:/localhost:8000"
 
 ## Implementation
 
@@ -16,7 +17,8 @@ The user can also delete trips (Optional functionality requirement for the proje
 4. Information fetched from the API endpoints are stored in server.
 5. Dynamic updation of the UI based on the information from the API's.
 
-## TO DO
-1. Service workers
-2. test for server and application js.
-3. script for test
+## Tests
+
+1. Tests are done on both server and application.
+2. They can be run by the script "npm run test".
+
